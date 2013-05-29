@@ -1,0 +1,39 @@
+{
+  "name": "backbone-mongodb",
+  "description": "Allows backbone models to work with MongoDB via REST.",
+  "version": "0.1.0",
+  "homepage": "https://github.com/dealancer/backbone-mongodb",
+  "author": {
+    "name": "Vadim Mirgorod",
+    "email": "dealancer@gmail.com",
+    "url": "http://vmirgorod.name"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/dealancer/backbone-mongodb.git"
+  },
+  "bugs": {
+    "url": "https://github.com/dealancer/backbone-mongodb/issues"
+  },
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "https://github.com/dealancer/backbone-mongodb/blob/master/LICENSE-MIT"
+    }
+  ],
+  "main": "Gruntfile.js",
+  "engines": {
+    "node": ">= 0.8.0"
+  },
+  "scripts": {
+    "test": "grunt test"
+  },
+  "devDependencies": {
+    "grunt-contrib-qunit": "0.1.1rc6",
+    "grunt": "0.4.0rc7"
+  },
+  "keywords": [
+    "backbone",
+    "plugin"
+  ]
+}
