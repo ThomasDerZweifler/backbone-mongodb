@@ -33,4 +33,8 @@
 
   // Provide mixin to extend Backbone.Model.
   Backbone.MongoModel.mixin = mixin;
+
+  // Another way to perform mixin.
+  //_.extend(Backbone.Model.prototype, mixin);
+
 }).call(this, Backbone);
