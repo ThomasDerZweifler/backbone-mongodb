@@ -5,6 +5,7 @@
 
 (function(Backbone) {
 
+  // Define mixing that we will use in our extension.
   var mixin = function() {
     return {
       // Convert MongoDB Extended JSON into regular one.
@@ -27,6 +28,9 @@
     }
   }
 
+  // Create new MongoModel object.
   Backbone.MongoModel = _.extend(Backbone.Model, mixin);
+
+  // Provide mixin to extend Backbone.Model.
   Backbone.MongoModel.mixin = mixin;
 }).call(this, Backbone);
