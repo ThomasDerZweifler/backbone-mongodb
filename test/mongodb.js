@@ -77,15 +77,6 @@ $(document).ready(function() {
     }, 50);
   });
 
-  asyncTest("Read MongoDB Extended JSON", 1, function() {
-    library.fetch();
-
-    setTimeout(function() {
-      ok(library.get('10'));
-      start();
-    }, 50);
-  });
-
   test("Export to MongoDB Extended JSON", 2, function(){
     var book = library.get(5);
     ok(book);
