@@ -20,12 +20,12 @@ $(document).ready(function() {
 
   module('Backbone.Mongodb', _.extend(new Environment, {
 
-    setup : function() {
+    setup: function() {
 
-      // Create new library
+      // Create new library.
       library = new Library();
 
-      // Define basic attrs
+      // Set init values.
       library.create(attrs, {wait: false});
 
       // Provide mockup AJAX responses.
@@ -53,7 +53,7 @@ $(document).ready(function() {
 
     teardown: function() {
 
-      // Clear all mockup AJAX responses.
+      // Remove all mockup AJAX responses.
       $.mockjaxClear();
     },
 
@@ -77,10 +77,16 @@ $(document).ready(function() {
     }, 50);
   });
 
-  test("Export to MongoDB Extended JSON", 2, function(){
+  test("Export to MongoDB Extended JSON", 2, function() {
     var book = library.get(5);
     ok(book);
-    var json = book.toJSON();
+
+    var json = book.toExtendedJSON();
     equal(json._id.$oid, 5);
   });
+
+  // TODO:
+  //   * add idAttribute test
+  //   * add save/sync test
+  //   * add export to regular JSON test
 });

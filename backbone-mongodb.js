@@ -11,19 +11,35 @@
     // Convert MongoDB Extended JSON into regular one.
     parse: function(resp, options) {
       if (_.isObject(resp._id))  {
-        resp.id = resp._id.$oid;
+        resp[this.idAttribute] = resp._id.$oid;
         delete resp._id;
       }
+
       return resp;
     },
 
     // Convert regular JSON into MongoDB extended one.
-    toJSON: function() {
-      var attrs = _.omit(this.attributes, 'id');
-      if (!_.isUndefined(this.id))  {
-        attrs._id = { $oid: this.id };
+    toExtendedJSON: function() {
+      var attrs = this.attributes;
+
+      var attrs = _.omit(attrs, this.idAttribute);
+      if (!_.isUndefined(this[this.idAttribute]))  {
+        attrs._id = { $oid: this[this.idAttribute] };
       }
+
       return attrs;
+    },
+
+    // Substute toJSON method when performing synchronization.
+    sync: function() {
+      var toJSON = this.toJSON;
+      this.toJSON = this.toExtendedJSON;
+
+      var ret = Backbone.sync.apply(this, arguments);
+
+      this.toJSON = toJSON;
+
+      return ret;
     }
   }
 
