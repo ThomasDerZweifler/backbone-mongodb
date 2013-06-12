@@ -1,14 +1,18 @@
-# backbone-mongodb
+# Backbone-mongodb
 
 Backbone-mongodb extension provides MongoDB compatible models that support MongoDB Extended JSON format.
 
-MongoDB import and export utilities and MongoDB REST Interfaces uses MongoDB Extended JSON for the documents. An ID in MongoDB Extended JSON is presented as following.
+# Background
+
+MongoDB import and export utilities and MongoDB REST Interfaces uses MongoDB Extended JSON for the documents. For example an indentifier in MongoDB Extended JSON is presented as following.
 
 ```
 {
   "$oid": "<id>"
 }
 ```
+
+Visit [http://docs.mongodb.org/manual/reference/mongodb-extended-json/] for more information about MongoDB Extended JSON.
 
 # Usage
 
@@ -18,7 +22,7 @@ Mix to Backbne.Model.
 _.extend(Backbone.Model.prototype, Backbone.MongoModel.mixin);
 ```
 
-Extend to your own model.
+Or extend to your own model.
 
 ```
 var Book = Backbone.MongoModel.extend({
@@ -27,7 +31,7 @@ var Book = Backbone.MongoModel.extend({
 ```
 
 
-If you want to work with [Mongolab.com], use following snippet.
+If you want to work with (Mongolab.com), you can use following snippet.
 
 ```
 var appConfig = {
@@ -57,4 +61,4 @@ var PostList = Backbone.Collection.extend({
 
 # Examples
 
-*  [SocialMobileApplication](http://dealancer.github.io/sma) - is an example application created to demonstrate Backbone.js and jQueryMobile capabilities, it communicates with [MongoLab](http://mongolab.com/), the RESTful MongoDB service. You can download client application from [github project page](http://github.com/dealancer/sma).
+*  [SocialMobileApplication](http://dealancer.github.io/sma) - is an example application created to demonstrate Backbone.js and jQueryMobile capabilities, it communicates with [MongoLab](http://mongolab.com/), the RESTful MongoDB service. You can download client application from it's [github project page](http://github.com/dealancer/sma).
