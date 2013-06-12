@@ -4,7 +4,7 @@ Backbone-mongodb extension provides MongoDB compatible models that support Mongo
 
 # Background
 
-MongoDB import and export utilities and MongoDB REST Interfaces uses MongoDB Extended JSON for the documents. For example an indentifier in MongoDB Extended JSON is presented as following.
+MongoDB import and export utilities and MongoDB REST Interfaces uses MongoDB Extended JSON for the documents. For example, an indentifier in MongoDB Extended JSON is presented as following.
 
 ```
 {
@@ -12,7 +12,7 @@ MongoDB import and export utilities and MongoDB REST Interfaces uses MongoDB Ext
 }
 ```
 
-Visit [http://docs.mongodb.org/manual/reference/mongodb-extended-json/] for more information about MongoDB Extended JSON.
+Visit http://docs.mongodb.org/manual/reference/mongodb-extended-json/ to get more information about MongoDB Extended JSON.
 
 # Usage
 
@@ -31,7 +31,7 @@ var Book = Backbone.MongoModel.extend({
 ```
 
 
-If you want to work with (Mongolab.com), you can use following snippet.
+If you want to work with [Mongolab.com](http://mongolab.com/), you can use following snippet.
 
 ```
 var appConfig = {
