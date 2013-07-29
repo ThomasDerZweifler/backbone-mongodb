@@ -2,7 +2,7 @@
 //
 // (c) 2013 Vadim Mirgorod
 // Licensed under the MIT license.
-// AMD support added be hand_er
+// AMD support added by hand_er
 
 (function (root, factory) {
     if (typeof exports === 'object') {
